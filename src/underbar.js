@@ -29,8 +29,12 @@ var _ = { };
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
-    if(n) {
-      var newArray = array.slice(array.length-n, array.length);
+    if(n>=0) {
+      var first = array.length-n;
+        if (first<0) {
+          first = 0;
+        }
+      var newArray = array.slice(first, array.length);
       return newArray;
     } else {
       return array[array.length-1];
