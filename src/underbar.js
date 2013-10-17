@@ -17,8 +17,8 @@ var _ = { };
   // return just the first element.
   _.first = function(array, n) {
    if (n>=0) {
-      var newArray = array.slice(0, n);
-      return newArray;
+    var newArray = array.slice(0, n);
+    return newArray;
    } else {
     return array[0];
    }
@@ -29,6 +29,11 @@ var _ = { };
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
+    if(n) {
+      var newArray = array.slice(n, array.length-1);
+    } else {
+      return array[array.length-1];
+    }
   };
 
   // Call iterator(value, key, collection) for each element of collection.
