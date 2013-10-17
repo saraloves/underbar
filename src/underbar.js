@@ -17,7 +17,7 @@ var _ = { };
   // return just the first element.
   _.first = function(array, n) {
    if (n>=0) {
-      newArray = array.slice(0, n);
+      var newArray = array.slice(0, n);
       return newArray;
    } else {
     return array[0];
