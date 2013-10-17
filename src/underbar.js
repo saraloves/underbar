@@ -20,7 +20,7 @@ var _ = { };
       return array[n];
     }
     else {
-      return arr[0];
+      return array[0];
     }
   };
 
