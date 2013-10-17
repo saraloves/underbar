@@ -30,7 +30,8 @@ var _ = { };
   // last element.
   _.last = function(array, n) {
     if(n) {
-      var newArray = array.slice(n, array.length-1);
+      var newArray = array.slice(array.length-n, array.length);
+      return newArray;
     } else {
       return array[array.length-1];
     }
