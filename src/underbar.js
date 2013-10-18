@@ -84,8 +84,6 @@ var _ = { };
       }
       return newArray;
   };
-  //so we know that the for loop runs before return.  We know that newArray holds its value 
-  //after the for loop, however, the value of newArray is lost.
 
 
 
@@ -93,6 +91,14 @@ var _ = { };
   _.reject = function(collection, iterator) {
     // TIP: see if you can re-use _.select() here, without simply
     // copying code in and modifying it
+    var newArray = [];
+      var test = "";
+      for (var i = 0; i<collection.length; i++) {
+        if (iterator(collection[i])===false) {
+          newArray.push(collection[i]);
+        }
+      }
+      return newArray;
   };
 
   // Produce a duplicate-free version of the array.
