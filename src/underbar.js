@@ -51,7 +51,7 @@ var _ = { };
         }
     } else {
       for (var key in collection) {
-       // iterator(collection[key], key, collection);
+        iterator(collection[key], key, collection);
       }
     }    
   };
@@ -64,8 +64,15 @@ var _ = { };
     // TIP: Here's an example of a function that needs to iterate, which we've
     // implemented for you. Instead of using a standard `for` loop, though,
     // it uses the iteration helper `each`, which you will need to write.
+      _.each(array, function(value, index, data) {
+        if (value === target) {
+          console.log(index);
+          return index;
+        }
+      });
   };
 
+_.indexOf([2,3,4,5,6], 5);
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, iterator) {
   };
