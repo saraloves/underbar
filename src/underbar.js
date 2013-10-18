@@ -66,7 +66,7 @@ var _ = { };
     // it uses the iteration helper `each`, which you will need to write.
     var myIndex=-1;
       _.each(array, function(value, index, data) {
-        if (myIndex == -1 && value === target) {
+        if (myIndex === -1 && value === target) {
           myIndex=index;
         }
       });
@@ -75,7 +75,19 @@ var _ = { };
 
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, iterator) {
+      var newArray = [];
+      var test = "";
+      for (var i = 0; i<collection.length; i++) {
+        if (iterator(collection[i])===true) {
+          newArray.push(collection[i]);
+        }
+      }
+      return newArray;
   };
+  //so we know that the for loop runs before return.  We know that newArray holds its value 
+  //after the for loop, however, the value of newArray is lost.
+
+
 
   // Return all elements of an array that don't pass a truth test.
   _.reject = function(collection, iterator) {
