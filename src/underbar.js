@@ -56,18 +56,6 @@ var _ = { };
   };
 
 
-  {
-    var output = [];
-    if Array.isArray(collection) {
-      for (var i = 0; i<collection.length; i++) {
-          output.push([collection[i], i]);
-      }
-    } else {
-      for (var key in collection) {
-        output.push([collection[key], key]);
-      }
-    }
-  };
 
   // Returns the index at which value can be found in the array, or -1 if value
   // is not present in the array.
