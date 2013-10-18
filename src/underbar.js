@@ -68,12 +68,12 @@ var _ = { };
       _.each(array, function(value, index, data) {
         if (value === target) {
           myIndex=index;
+          return;
         }
       });
       return myIndex;
   };
 
-_.indexOf([2,3,4,5,6], 5);
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, iterator) {
   };
