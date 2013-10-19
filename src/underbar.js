@@ -166,7 +166,7 @@ var _ = { };
   //   }, 0); // should be 6
   //
   _.reduce = function(collection, iterator, initialValue) {
-    var result = initialValue;
+    var result = initialValue || 0;
     for (var i = 0; i<collection.length; i++) {
         result = iterator(result, collection[i]);
     }
