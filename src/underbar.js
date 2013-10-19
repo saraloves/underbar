@@ -157,7 +157,7 @@ var _ = { };
     return list;
     
   };
-  };
+  
 
   // Reduces an array or object to a single value by repetitively calling
   // iterator(previousValue, item) for each item. previousValue should be
