@@ -16,7 +16,7 @@ var _ = { };
   // Return an array of the first n elements of an array. If n is undefined,
   // return just the first element.
   _.first = function(array, n) {
-   if (n>=0) {
+   if (n >= 0) {
     var newArray = array.slice(0, n);
     return newArray;
    } else {
@@ -191,11 +191,7 @@ _.contains = function(collection, target) {
     // TIP: Many iteration problems can be most easily expressed in
     // terms of reduce(). Here's a freebie to demonstrate!
     return _.reduce(collection, function(wasFound, item) {
-        if(wasFound) {
-          return true;
-        } else {
-        return item === target;
-        }
+        return (wasFound === true ? true : item === target);
     }, false);
 
   };
