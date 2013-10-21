@@ -16,7 +16,7 @@ var _ = { };
   // Return an array of the first n elements of an array. If n is undefined,
   // return just the first element.
   _.first = function(array, n) {
-   if (n>=0) {
+   if (n >= 0) {
     var newArray = array.slice(0, n);
     return newArray;
    } else {
@@ -29,9 +29,9 @@ var _ = { };
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
-    if(n>=0) {
+    if(n >= 0) {
       var first = array.length-n;
-        if (first<0) {
+        if (first < 0) {
           first = 0;
         }
       var newArray = array.slice(first, array.length);
@@ -46,7 +46,7 @@ var _ = { };
 
   _.each = function(collection, iterator) {
     if (Array.isArray(collection)) {
-        for (var i=0; i<collection.length; i++) {
+        for (var i=0; i < collection.length; i++) {
           iterator(collection[i], i, collection);
         }
     } else {
