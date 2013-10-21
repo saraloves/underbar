@@ -29,9 +29,9 @@ var _ = { };
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
-    if(n>=0) {
+    if(n >= 0) {
       var first = array.length-n;
-        if (first<0) {
+        if (first < 0) {
           first = 0;
         }
       var newArray = array.slice(first, array.length);
@@ -46,7 +46,7 @@ var _ = { };
 
   _.each = function(collection, iterator) {
     if (Array.isArray(collection)) {
-        for (var i=0; i<collection.length; i++) {
+        for (var i = 0; i<collection.length; i++) {
           iterator(collection[i], i, collection);
         }
     } else {
@@ -64,10 +64,10 @@ var _ = { };
     // TIP: Here's an example of a function that needs to iterate, which we've
     // implemented for you. Instead of using a standard `for` loop, though,
     // it uses the iteration helper `each`, which you will need to write.
-    var myIndex=-1;
+    var myIndex =- 1;
       _.each(array, function(value, index, data) {
         if (myIndex === -1 && value === target) {
-          myIndex=index;
+          myIndex = index;
         }
       });
       return myIndex;
@@ -77,8 +77,8 @@ var _ = { };
   _.filter = function(collection, iterator) {
       var newArray = [];
       var test = "";
-      for (var i = 0; i<collection.length; i++) {
-        if (iterator(collection[i])===true) {
+      for (var i = 0; i < collection.length; i++) {
+        if (iterator(collection[i]) === true) {
           newArray.push(collection[i]);
         }
       }
@@ -93,8 +93,8 @@ var _ = { };
     // copying code in and modifying it
     var newArray = [];
       var test = "";
-      for (var i = 0; i<collection.length; i++) {
-        if (iterator(collection[i])===false) {
+      for (var i = 0; i < collection.length; i++) {
+        if (iterator(collection[i]) === false) {
           newArray.push(collection[i]);
         }
       }
@@ -104,8 +104,8 @@ var _ = { };
   // Produce a duplicate-free version of the array.
   _.uniq = function(array) {
     var unique = [];
-    for (var i = 0; i<array.length; i++) {
-      if (unique.indexOf(array[i])=== -1) {
+    for (var i = 0; i < array.length; i++) {
+      if (unique.indexOf(array[i]) === -1) {
         unique.push(array[i]);
       }
     }
@@ -119,7 +119,7 @@ var _ = { };
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.
     var results = [];
-    for (var i = 0; i<array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
       results.push(iterator(array[i]));
     }
     return results;
@@ -175,7 +175,7 @@ var _ = { };
   _.reduce = function(collection, iterator, initialValue) {
     var result = initialValue || 0;
     if (Array.isArray(collection)) {
-      for (var i = 0; i<collection.length; i++) {
+      for (var i = 0; i < collection.length; i++) {
         result = iterator(result, collection[i]);
       }
     } else {
@@ -192,6 +192,12 @@ _.contains = function(collection, target) {
     // terms of reduce(). Here's a freebie to demonstrate!
     return _.reduce(collection, function(wasFound, item) {
         return (wasFound === true ? true : item === target);
+        // non-ternary version was
+        //  if(wasFound) {
+        //   return true;
+        // } else {
+        // return item === target;
+        // }
     }, false);
 
   };
