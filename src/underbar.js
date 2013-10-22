@@ -205,13 +205,19 @@ _.contains = function(collection, target) {
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
+
     return _.reduce(collection, function(result, item){
-        console.log (result);
-        return (result === true ? true : false);
+      console.log(result, item);
+      return (item === true ? true : false); //this is running
 
     }, false);
 
   };
+
+
+          function isEven(value) {
+          return (value%2 === 0);
+        };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
