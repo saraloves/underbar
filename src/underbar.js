@@ -203,21 +203,34 @@ _.contains = function(collection, target) {
   };
 
   // Determine whether all of the elements match a truth test.
+
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
 
-    return _.reduce(collection, function(result, item){
-      console.log(result, item);
-      return (item === true ? true : false); //this is running
+    return _.reduce(collection, function(isTrue, item){
+      console.log(isTrue, item);
+      return (isTrue === true ? true : false); //this is running
 
-    }, false);
+    }, true);
 
   };
 
 
-          function isEven(value) {
-          return (value%2 === 0);
-        };
+  // _.every = function(collection, iterator) {
+  // // TIP: Try re-using reduce() here.
+
+  //   return _.reduce(collection, function(isTrue, iterator){
+  //     if (!iterator(isTrue)) {
+  //       return false;
+  //     }//this is running
+  //   }, true);
+
+  // };
+
+
+        //   function isEven(value) {
+        //   return (value%2 === 0);
+        // };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
@@ -244,7 +257,12 @@ _.contains = function(collection, target) {
   //   }, {
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
-  _.extend = function(obj) {
+  _.extend = function(obj, newObj) {
+      var mergedObj = obj;
+      for (var key in newObj) {
+        mergedObj[key] = newObj[key];
+      }
+      return mergedObj;
   };
 
   // Like extend, but doesn't ever overwrite a key that already
