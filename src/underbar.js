@@ -257,13 +257,25 @@ _.contains = function(collection, target) {
   //   }, {
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
-  _.extend = function(obj, newObj) {
-      var mergedObj = obj;
-      for (var key in newObj) {
-        mergedObj[key] = newObj[key];
+  // _.extend = function(obj) {
+  //     var newObj = obj;
+  //       for (var key in obj) {
+  //         console.log(newObj[key]);
+  //         newObj[key] = obj[key];
+  //       }
+  //     return newObj;
+  // };
+
+
+  _.extend = function(obj) {
+    var mergedObj = {};
+    for (var i = 0; i < arguments.length; i++) {
+      for (var key in arguments[i]) {
+        mergedObj[key] = arguments[i][key];
       }
-      return mergedObj;
-  };
+    }
+    return mergedObj;
+  }
 
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
