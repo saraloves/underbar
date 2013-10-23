@@ -49,7 +49,8 @@ var _ = { };
         for (var i = 0; i < collection.length; i++) {
           iterator(collection[i], i, collection);
         }
-    } else {
+      } 
+    }else {
       for (var key in collection) {
         iterator(collection[key], key, collection);
       }
@@ -215,9 +216,9 @@ _.contains = function(collection, target) {
         return false;
       } else {
         if (iterator) {
-          return boolean(iterator(item));
+          return Boolean(iterator(item));
         } else {
-          return boolean(item);
+          return Boolean(item);
         }
       }
     }, true);
