@@ -228,6 +228,8 @@ _.contains = function(collection, target) {
     }, true);
   };
 
+
+
   // _.every = function(collection, iterator) {
   //   return _.reduce(collection, function(isTrue, item){
   //     //Run the function reduce within every.  Reduce will iterate over
@@ -303,6 +305,7 @@ _.contains = function(collection, target) {
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+    return _.every();
   };
 
 
