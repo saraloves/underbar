@@ -218,7 +218,7 @@ _.contains = function(collection, target) {
     //are collection, the iterator, and true. The inputs for the
     //iterator are isTrue and item.  We should include iterator.
       console.log(isTrue, item);
-      return (isTrue == false ? false : item == true); //this is running
+      return (isTrue === false ? false : item === true); //this is running
     }, true);
 
   };
