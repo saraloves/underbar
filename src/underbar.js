@@ -25,7 +25,6 @@ var _ = { };
     
   };
 
-
   // Like first, but for the last elements. If n is undefined, return just the
   // last element.
   _.last = function(array, n) {
@@ -327,6 +326,7 @@ _.contains = function(collection, target) {
   // instead if possible.
   _.memoize = function(func) {
   };
+  
 
   // Delays a function for the given number of milliseconds, and then calls
   // it with the arguments supplied.
