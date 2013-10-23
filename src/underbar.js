@@ -180,6 +180,7 @@ var _ = { };
       }
     } else {
       for (var key in collection) {
+        console.log(collection[key]);
         result = iterator(result, collection[key]);
       }
     }
@@ -211,17 +212,39 @@ _.contains = function(collection, target) {
       //are collection, the iterator, and true. The inputs for the
       //iterator are isTrue and item.  We should include iterator.
        // console.log(isTrue, item, iterator);
-    if (isTrue === false) {
-      return false;
-    } else {
-      if (iterator) {
-        return iterator(item) === true;
+      if (isTrue === false) {
+        return false;
       } else {
-        return item == true;
+        if (iterator) {
+          return boolean(iterator(item));
+        } else {
+          return boolean(item);
+        }
       }
-    }
     }, true);
   };
+
+  // _.every = function(collection, iterator) {
+  //   return _.reduce(collection, function(isTrue, item){
+  //     //Run the function reduce within every.  Reduce will iterate over
+  //     //a dataset and return a single value.  Here the inputs for reduce
+  //     //are collection, the iterator, and true. The inputs for the
+  //     //iterator are isTrue and item.  We should include iterator.
+  //      // console.log(isTrue, item, iterator);
+  // //   if (isTrue === false) {
+  // //     return false;
+  // //   } else {
+  //     if (iterator) {
+  //       return iterator(item) === true;
+  //     } else {
+  //       return item === true;
+  //     }
+  //   }
+  //   }, true);
+  // };
+
+
+  //return (isTrue && iterator(item) || item);
 
   //  _.every = function(collection, iterator) {
 
