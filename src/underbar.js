@@ -46,7 +46,11 @@ var _ = { };
 
   _.each = function(collection, iterator) {
     if (Array.isArray(collection)) {
+<<<<<<< HEAD
         for (var i = 0; i<collection.length; i++) {
+=======
+        for (var i = 0; i < collection.length; i++) {
+>>>>>>> d6b63ef7028bb877dc824a3c2a0158e4fe42f4ac
           iterator(collection[i], i, collection);
         }
     } else {
