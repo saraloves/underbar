@@ -217,8 +217,8 @@ _.contains = function(collection, target) {
     //a dataset and return a single value.  Here the inputs for reduce
     //are collection, the iterator, and true. The inputs for the
     //iterator are isTrue and item.  We should include iterator.
-      console.log(isTrue, item);
-      return (isTrue === false ? false : item === true); //this is running
+     // console.log(isTrue, item, iterator);
+      return (isTrue === false ? false : iterator(item) === true); //this is running
     }, true);
 
   };
@@ -248,6 +248,7 @@ _.contains = function(collection, target) {
 
 
         //   function isEven(value) {
+        //     console.log(value + "divided by two");
         //   return (value%2 === 0);
         // };
 
