@@ -204,16 +204,35 @@ _.contains = function(collection, target) {
 
   // Determine whether all of the elements match a truth test.
 
-  _.every = function(collection, iterator) {
-    // TIP: Try re-using reduce() here.
+
+   _.every = function(collection, iterator) {
+
+    // Run the function every and take in the parameters collection 
+    //and iterator.  Collection is the array or object we are using,
+    //iterator is what we want to check for.  We know that the iterator
+    //is provided when we call _.every
 
     return _.reduce(collection, function(isTrue, item){
+    //Run the function reduce within every.  Reduce will iterate over
+    //a dataset and return a single value.  Here the inputs for reduce
+    //are collection, the iterator, and true. The inputs for the
+    //iterator are isTrue and item.  We should include iterator.
       console.log(isTrue, item);
-      return (isTrue === true ? true : false); //this is running
-
+      return (isTrue == false ? false : item == true); //this is running
     }, true);
 
   };
+
+  // _.every = function(collection, iterator) {
+  //   // TIP: Try re-using reduce() here.
+
+  //   return _.reduce(collection, function(isTrue, item){
+  //     console.log(isTrue, item);
+  //     return (isTrue === true ? true : false); //this is running
+
+  //   }, true);
+
+  // };
 
 
   // _.every = function(collection, iterator) {
@@ -280,6 +299,16 @@ _.contains = function(collection, target) {
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
   _.defaults = function(obj) {
+    var mergedObj = {};
+    for (var i = 0; i < arguments.length; i++) {
+      console.log(arguments);
+      for (var key in arguments[i]) {
+        if (!mergedObj[key]) {
+          mergedObj[key] = arguments[i][key];
+        }
+      }
+      return mergedObj;
+    }
   };
 
 
