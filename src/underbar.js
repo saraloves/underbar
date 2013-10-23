@@ -227,76 +227,7 @@ _.contains = function(collection, target) {
 
 
 
-  // _.every = function(collection, iterator) {
-  //   return _.reduce(collection, function(isTrue, item){
-  //     //Run the function reduce within every.  Reduce will iterate over
-  //     //a dataset and return a single value.  Here the inputs for reduce
-  //     //are collection, the iterator, and true. The inputs for the
-  //     //iterator are isTrue and item.  We should include iterator.
-  //      // console.log(isTrue, item, iterator);
-  // //   if (isTrue === false) {
-  // //     return false;
-  // //   } else {
-  //     if (iterator) {
-  //       return iterator(item) === true;
-  //     } else {
-  //       return item === true;
-  //     }
-  //   }
-  //   }, true);
-  // };
 
-
-  //return (isTrue && iterator(item) || item);
-
-  //  _.every = function(collection, iterator) {
-
-  //   // Run the function every and take in the parameters collection 
-  //   //and iterator.  Collection is the array or object we are using,
-  //   //iterator is what we want to check for.  We know that the iterator
-  //   //is provided when we call _.every
-
-  // //   return _.reduce(collection, function(isTrue, item){
-  // //   //Run the function reduce within every.  Reduce will iterate over
-  // //   //a dataset and return a single value.  Here the inputs for reduce
-  // //   //are collection, the iterator, and true. The inputs for the
-  // //   //iterator are isTrue and item.  We should include iterator.
-  // //    // console.log(isTrue, item, iterator);
-  // //     return (isTrue === false ? false : iterator(item) === true); //this is running
-  // //   }, true);
-
-  // // };
-
-  // end of previously working every
-
-  // _.every = function(collection, iterator) {
-  //   // TIP: Try re-using reduce() here.
-
-  //   return _.reduce(collection, function(isTrue, item){
-  //     console.log(isTrue, item);
-  //     return (isTrue === true ? true : false); //this is running
-
-  //   }, true);
-
-  // };
-
-
-  // _.every = function(collection, iterator) {
-  // // TIP: Try re-using reduce() here.
-
-  //   return _.reduce(collection, function(isTrue, iterator){
-  //     if (!iterator(isTrue)) {
-  //       return false;
-  //     }//this is running
-  //   }, true);
-
-  // };
-
-
-        //   function isEven(value) {
-        //     console.log(value + "divided by two");
-        //   return (value%2 === 0);
-        // };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
