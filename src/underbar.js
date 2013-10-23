@@ -203,7 +203,7 @@ _.contains = function(collection, target) {
   };
 
   // Determine whether all of the elements match a truth test.
-  
+
   _.every = function(collection, iterator) {
     return _.reduce(collection, function(isTrue, item){
       //Run the function reduce within every.  Reduce will iterate over
@@ -217,7 +217,7 @@ _.contains = function(collection, target) {
       if (iterator) {
         return iterator(item) === true;
       } else {
-        return item === true;
+        return item == true;
       }
     }
     }, true);
