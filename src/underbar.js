@@ -216,9 +216,9 @@ _.contains = function(collection, target) {
         return false;
       } else {
         if (iterator) {
-          return boolean(iterator(item));
+          return Boolean(iterator(item));
         } else {
-          return boolean(item);
+          return Boolean(item);
         }
       }
     }, true);
