@@ -206,7 +206,6 @@ _.contains = function(collection, target) {
   // Determine whether all of the elements match a truth test.
 
   _.every = function(collection, iterator) {
-    debugger;
     return _.reduce(collection, function(isTrue, item){
       //Run the function reduce within every.  Reduce will iterate over
       //a dataset and return a single value.  Here the inputs for reduce
@@ -226,8 +225,20 @@ _.contains = function(collection, target) {
   };
 
   _.some = function(collection, iterator) {
+    return _.reduce(collection, function(isTrue, item){
+      if (isTrue === true) {
+        return true;
+      } else {
+        if (iterator) {
+          return Boolean(iterator(item));
+        } else {
+          return Boolean(item);
+        }
+      }
+
+    }, false);
     // TIP: There's a very clever way to re-use every() here.
-    return _.every(collection, !iterator);
+      //return _.every(collection, !iterator);
       // i am reversing the iterator, so every will return true if none of the values evaluate to true
       // 
 
