@@ -226,7 +226,7 @@ _.contains = function(collection, target) {
 
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
-    return !_.every(collection, !iterator);
+    return (_.every(collection, !iterator) === false);
 
     };
 
