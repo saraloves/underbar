@@ -398,7 +398,7 @@ _.contains = function(collection, target) {
   // call someFunction('a', 'b') after 500ms
   _.delay = function(func, wait, args) {
       var argArray = Array.prototype.slice.apply(arguments);
-      setTimeout( argArray[0](argArray.slice(2, arguments.length)), argArray[1]);
+      setTimeout( argArray[0](argArray.slice(2, arguments.length)), wait);
   };
 
 
