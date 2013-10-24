@@ -329,18 +329,19 @@ _.contains = function(collection, target) {
     return mergedObj;
   }
 
+
   // Like extend, but doesn't ever overwrite a key that already
   // exists in obj
   _.defaults = function(obj) {
-    var mergedObj = {};
-    for (var i = 0; i <= arguments.length; i++) {
+    for (var i = 1; i < arguments.length; i++) {
       for (var key in arguments[i]) {
-        if (!mergedObj[key]) {
-          mergedObj[key] = arguments[i][key];
+        if (obj[key] === undefined) {
+          obj[key] = arguments[i][key];
+
         }
       }
     }
-    return mergedObj;
+    return obj;
   };
 
 
