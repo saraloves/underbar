@@ -396,10 +396,25 @@ _.contains = function(collection, target) {
   // The arguments for the original function are passed after the wait
   // parameter. For example _.delay(someFunction, 500, 'a', 'b') will
   // call someFunction('a', 'b') after 500ms
-  _.delay = function(func, wait, args) {
-      var argArray = Array.prototype.slice.apply(arguments);
-      return setTimeout(argArray[0](argArray.slice(2, arguments.length)), wait);
+
+  _.delay = function(func, wait) {
+    var argArray = Array.prototype.slice.call(arguments, 2);
+    console.log(argArray);
+    return setTimeout(function() {
+      return func.apply(this, argArray);
+    }, wait);
   };
+
+
+
+
+  // _.delay = function(func, wait, args) {
+  //     var argArray = Array.prototype.slice.call(arguments);
+  //     console.log(argArray);
+  //     console.log(argArray.slice(2, arguments.length));
+  //     return setTimeout(function() {return func.apply(argArray.slice(2, arguments.length));}, wait);
+
+  // };
 
 
   /**
@@ -409,10 +424,11 @@ _.contains = function(collection, target) {
 
   // Shuffle an array.
   _.shuffle = function(array) {
-    var shuffledArray = [];
-    while (array) {
-      array[Math.random()]
-    }
+      var reverseArray = [];
+      for (var i = array.length-1; i>=0; i--) {
+          reverseArray.push(array[i]);
+      }
+      return reverseArray;
   };
 
 
