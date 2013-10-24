@@ -327,8 +327,8 @@ _.contains = function(collection, target) {
           mergedObj[key] = arguments[i][key];
         }
       }
-      return mergedObj;
     }
+    return mergedObj;
   };
 
 
