@@ -233,7 +233,7 @@ _.contains = function(collection, target) {
 
     };
 
-_.some([10, 10, 20], isEven)
+
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
