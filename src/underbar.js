@@ -232,7 +232,43 @@ _.contains = function(collection, target) {
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
-  };
+    return _.every(collection, !iterator);
+
+    };
+
+_.some([null, 0, 'yes', false]);
+
+  // return _.every(collection, function(isTrue, item) {
+  //     console.log(isTrue, item);
+  //     if (iterator) {
+  //       if (iterator(item)) {
+  //         console.log(item);
+  //         return true;
+  //       } else {
+  //         if (item) {
+  //           console.log(item);
+  //           return true;
+  //         }
+  //       }
+  //     }
+  //   });
+  // };
+
+
+   // return _.every(collection, function(everTrue, item){
+   //    console.log("hey");
+   //    if (everTrue === true) {
+   //      return true;
+   //    } else if (iterator) {
+   //      if (iterator(item)===true) {
+   //      return true;
+   //      }
+   //    } else {
+   //      if (item===true) {
+   //        return true;
+   //      }
+   //    }
+   //  });
 
 
   /**
@@ -278,7 +314,6 @@ _.contains = function(collection, target) {
   _.defaults = function(obj) {
     var mergedObj = {};
     for (var i = 0; i < arguments.length; i++) {
-      console.log(arguments);
       for (var key in arguments[i]) {
         if (!mergedObj[key]) {
           mergedObj[key] = arguments[i][key];
