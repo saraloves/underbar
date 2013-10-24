@@ -212,6 +212,7 @@ _.contains = function(collection, target) {
       //are collection, the iterator, and true. The inputs for the
       //iterator are isTrue and item.  We should include iterator.
        // console.log(isTrue, item, iterator);
+       debugger;
       if (isTrue === false) {
         return false;
       } else {
@@ -227,9 +228,12 @@ _.contains = function(collection, target) {
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
     return _.every(collection, !iterator);
+      // i am reversing the iterator, so every will return true if none of the values evaluate to true
+      // 
 
     };
-
+    
+_.some([10, 10, 20], isEven)
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
@@ -240,7 +244,7 @@ _.contains = function(collection, target) {
 
   //   };
 
-_.some([null, 0, 'yes', false]);
+// _.some([null, 0, 'yes', false]);
 
   // return _.every(collection, function(isTrue, item) {
   //     console.log(isTrue, item);
