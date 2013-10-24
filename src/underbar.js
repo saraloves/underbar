@@ -173,7 +173,7 @@ var _ = { };
   //   }, 0); // should be 6
   //
   _.reduce = function(collection, iterator, initialValue) {
-    var result = 0 || initialValue;
+    var result = initialValue || 0;
     if (Array.isArray(collection)) {
       for (var i = 0; i < collection.length; i++) {
         result = iterator(result, collection[i]);
@@ -225,7 +225,7 @@ _.contains = function(collection, target) {
   };
 
   _.some = function(collection, iterator) {
-    return _.reduce(collection, function(isTrue, item){
+    return Boolean(_.reduce(collection, function(isTrue, item){
       if (isTrue === true) {
         return true;
       } else {
@@ -236,13 +236,14 @@ _.contains = function(collection, target) {
         }
       }
 
-    }, false);
+    }, false));
+  };
     // TIP: There's a very clever way to re-use every() here.
       //return _.every(collection, !iterator);
       // i am reversing the iterator, so every will return true if none of the values evaluate to true
       // 
 
-    };
+  
 
 
 
@@ -380,8 +381,14 @@ _.contains = function(collection, target) {
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var result;
+    return function(){
+      result = func.apply(this, arguments);
+      return result;
+    }
   };
   
+ 
 
   // Delays a function for the given number of milliseconds, and then calls
   // it with the arguments supplied.
