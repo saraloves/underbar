@@ -321,7 +321,7 @@ _.contains = function(collection, target) {
   // exists in obj
   _.defaults = function(obj) {
     var mergedObj = {};
-    for (var i = 0; i < arguments.length; i++) {
+    for (var i = 0; i <= arguments.length; i++) {
       for (var key in arguments[i]) {
         if (!mergedObj[key]) {
           mergedObj[key] = arguments[i][key];
