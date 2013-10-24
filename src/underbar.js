@@ -173,7 +173,7 @@ var _ = { };
   //   }, 0); // should be 6
   //
   _.reduce = function(collection, iterator, initialValue) {
-    var result = initialValue || 0;
+    var result = 0 || initialValue;
     if (Array.isArray(collection)) {
       for (var i = 0; i < collection.length; i++) {
         result = iterator(result, collection[i]);
@@ -192,7 +192,7 @@ _.contains = function(collection, target) {
     // TIP: Many iteration problems can be most easily expressed in
     // terms of reduce(). Here's a freebie to demonstrate!
     return _.reduce(collection, function(wasFound, item) {
-        return (wasFound === true ? true : item === target);
+      return (wasFound === true ? true : item === target);
         // non-ternary version was
         //  if(wasFound) {
         //   return true;
