@@ -224,17 +224,21 @@ _.contains = function(collection, target) {
     }, true);
   };
 
+  _.some = function(collection, iterator) {
+    // TIP: There's a very clever way to re-use every() here.
+    return !_.every(collection, iterator);
 
-
+    };
 
 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
-  _.some = function(collection, iterator) {
-    // TIP: There's a very clever way to re-use every() here.
-    return _.every(collection, !iterator);
+  // _.some = function(collection, iterator) {
+  //   debugger;
+  //   // TIP: There's a very clever way to re-use every() here.
+  //   return _.every(collection, !iterator);
 
-    };
+  //   };
 
 _.some([null, 0, 'yes', false]);
 
