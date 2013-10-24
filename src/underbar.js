@@ -398,7 +398,7 @@ _.contains = function(collection, target) {
   // call someFunction('a', 'b') after 500ms
   _.delay = function(func, wait, args) {
       var argArray = Array.prototype.slice.apply(arguments);
-      setTimeout( argArray[0](argArray.slice(2, arguments.length)), wait);
+      return setTimeout(argArray[0](argArray.slice(2, arguments.length)), wait);
   };
 
 
@@ -409,6 +409,10 @@ _.contains = function(collection, target) {
 
   // Shuffle an array.
   _.shuffle = function(array) {
+    var shuffledArray = [];
+    while (array) {
+      array[Math.random()]
+    }
   };
 
 
