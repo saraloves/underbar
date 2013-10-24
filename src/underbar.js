@@ -206,13 +206,13 @@ _.contains = function(collection, target) {
   // Determine whether all of the elements match a truth test.
 
   _.every = function(collection, iterator) {
+    debugger;
     return _.reduce(collection, function(isTrue, item){
       //Run the function reduce within every.  Reduce will iterate over
       //a dataset and return a single value.  Here the inputs for reduce
       //are collection, the iterator, and true. The inputs for the
       //iterator are isTrue and item.  We should include iterator.
        // console.log(isTrue, item, iterator);
-       debugger;
       if (isTrue === false) {
         return false;
       } else {
@@ -232,7 +232,7 @@ _.contains = function(collection, target) {
       // 
 
     };
-    
+
 _.some([10, 10, 20], isEven)
 
   // Determine whether any of the elements pass a truth test. If no iterator is
