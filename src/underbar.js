@@ -400,7 +400,6 @@ _.contains = function(collection, target) {
 
   _.delay = function(func, wait) {
     var argArray = Array.prototype.slice.call(arguments, 2);
-    console.log(argArray);
     return setTimeout(function() {
       return func.apply(this, argArray);
     }, wait);
@@ -424,15 +423,29 @@ _.contains = function(collection, target) {
    */
 
   // Shuffle an array.
+  
   _.shuffle = function(array) {
-      var reverseArray = [];
-      for (var i = array.length-1; i>=0; i--) {
-          reverseArray.push(array[i]);
-      }
-      return reverseArray;
+    var oldArray = array;
+    var newArray = [];
+    for (var i = array.length; i>0; i--) {
+      var random = Math.floor(Math.random() * i)
+      newArray.push(oldArray[random]);
+      oldArray.splice(random, 1);
+    }
+    return newArray;
   };
 
-
+  // _.shuffle = function(array) {
+  //   var shuffledArray = [];
+  //   for (var i = 0; i < array.length; i++) {
+  //     if (i < Math.floor(Math.random()*10)) {
+  //       shuffledArray.push(array[i]);
+  //     } else {
+  //       shuffledArray.unshift(array[i]);
+  //     }
+  //   }
+  //   return shuffledArray;
+  // };
   /**
    * Note: This is the end of the pre-course curriculum. Feel free to continue,
    * but nothing beyond here is required.
